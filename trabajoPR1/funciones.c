@@ -26,6 +26,7 @@ int menu(void)
         if(opcion<1||opcion>8)
         {
             printf("error opcion no valida\n\n");
+            exit(-1);
         }
         else
         {
@@ -88,7 +89,13 @@ int menu(void)
                 printf(".....Mantenimiento.....\n");
                 break;
             case 8:
-                Mostrar_Operaciones(operador1,operador2);
+                if(flag1==1||flag2==1)
+                {
+                    Mostrar_Operaciones(operador1,operador2);
+                }
+                else{
+                    printf("no hay nada que mostrar\n");
+                }
                 break;
             }
             printf("\ndesea finalizar el programa? s/n: ");
